@@ -2,8 +2,8 @@
 #include <Servo.h> // 서보 모터 라이브러리 포함
 
 // HC-SR04 핀 설정
-const int TRIG_PIN = 9;
-const int ECHO_PIN = 10;
+const int TRIG_PIN = 10;
+const int ECHO_PIN = 9;
 
 const int GREEN_LED = 12;
 const int YELLOW_LED = 8;
@@ -50,13 +50,13 @@ void loop() {
   Serial.print(distance);
   Serial.print(" cm");
 
-  if (distance <= 5) {
+  if (distance <= 7) {
     digitalWrite(GREEN_LED, LOW);
     digitalWrite(YELLOW_LED, LOW);
     digitalWrite(RED_LED, HIGH);
     myservo.write(180); // 서보 모터를 180도로 설정
     Serial.print(", Color: Red");
-  } else if (distance <= 10) {
+  } else if (distance <= 13) {
     digitalWrite(GREEN_LED, LOW);
     digitalWrite(YELLOW_LED, HIGH);
     digitalWrite(RED_LED, LOW);
